@@ -7,10 +7,9 @@ import java.util.Scanner;
 
 public class SwitchCase {
 
-    public static int sum(int soA, int soB){
+    public static int sum(int soA, int soB) {
         return soA + soB;
     }
-
 
 
     public static void main(String[] args) {
@@ -60,18 +59,21 @@ public class SwitchCase {
         // VN: dd/MM/yyyy : 10/6/2024 --> 2024/06/10
         // kiểu dữ liệu tên_biến
         // kiểu_dữ_liệu   tên_biến     = giá_trị
-        int               soTienKhoa   = 110000;
-        int               soTienDuy    = 100000;
+        int soTienKhoa = 110000;
+        int soTienDuy = 100000;
         //------------------------------------------
-        int               sumBill      = sum(soTienKhoa,soTienDuy);
+        int sumBill = sum(soTienKhoa, soTienDuy);
 
-        DateTimeFormatter formatter    = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate         standardDate = LocalDate.parse(date, formatter);
-        DayOfWeek            dayOfWeek = standardDate.getDayOfWeek();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate standardDate = LocalDate.parse(date, formatter);
+        DayOfWeek dayOfWeek = standardDate.getDayOfWeek();
+
+        System.out.println("Ngày: " + date + " là thứ: " + dayOfWeek);
 
         String dayOfWeekResult;
 
-        switch (dayOfWeek){
+
+        switch (dayOfWeek) {
             case MONDAY:
                 dayOfWeekResult = "Monday";
                 break;
@@ -86,7 +88,34 @@ public class SwitchCase {
                 break;
         }
 
-        System.out.println("Ngày: " + date + " là thứ: " + dayOfWeekResult);
+
+        System.out.println(" là thứ: " + dayOfWeekResult);
+        // yyyy/MM/dd hh:mm:ss
+
+
+        String champion = "Yasuo";
+        String xepHang;
+
+        switch (champion) {
+            case "Yasuo":
+                xepHang = "Bạc";
+                break;
+            case "Gold":
+                xepHang = "Vàng";
+                break;
+            case "Diamond":
+                xepHang = "Kim cương";
+                break;
+            case "Challenger":
+                xepHang = "Thách đấu";
+                break;
+            default:
+                xepHang = "Unrank";
+                break;
+        }
+
+        System.out.println("Mức xếp hạng của bạn là: " + xepHang);
+
     }
 //        System.out.println("Sum bill: " + sumBill);
 }
