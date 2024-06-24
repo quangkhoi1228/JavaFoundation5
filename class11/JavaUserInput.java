@@ -1,4 +1,4 @@
-package class10;//package class10;
+package class11;//package class10;
 
 import java.util.Scanner;
 
@@ -13,9 +13,9 @@ public class JavaUserInput {
 
 
         System.out.print("Tuổi bạn là gì: ");
-        int age = scanner.nextInt();
+        String age = scanner.nextLine();
         System.out.println("Tuổi của bạn: " + age);
-        scanner.nextLine(); // ""
+//        scanner.nextLine(); // ""
 
         String rank = "bạc"; // không
 
