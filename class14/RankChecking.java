@@ -27,23 +27,34 @@ public class RankChecking {
         // Nếu A == bất kỳ 1 item nào trong danh sách hợp lệ thì người dùng hợp lệ
         //                       0      1           2           3
         String[] rankList = {"Gold", "Silver", "Diamond", "Challenge", "Bạc", "Vàng", "Kim cương", "Thách đấu"}; // Gold,  gold , golD, gOld
-
         boolean isUserInputValid = false;
-        String rankInputLowerCaseWithFirstLetterCapitalize = "";
+        String finalRankInput = "";
 
         while (!isUserInputValid) {
-            String rankInputLowerCase = rankInput.toLowerCase();
+            String rankInputVietThuong = rankInput.toLowerCase();
+
+            // "    G      o    l    d   " -> trim() -> " G      o    l    d" -> replace(" ", "")  -> "Gold"  //   " " -> ""
+            String rankInputXoaTatCaKhoangTrangOGiua = rankInputVietThuong.trim().replaceAll(
+                    " ", "");
+
+            System.out.println("rankInputXoaTatCaKhoangTrangOGiua: " + rankInputXoaTatCaKhoangTrangOGiua);
+
+
             // gold -> Gold
-            String firstLetter = rankInputLowerCase.substring(0,
+            String firstLetter = rankInputXoaTatCaKhoangTrangOGiua.substring(0,
                     1).toUpperCase();
-            String remain = rankInputLowerCase.substring(1);
-            rankInputLowerCaseWithFirstLetterCapitalize = firstLetter + remain;
+            String remain = rankInputXoaTatCaKhoangTrangOGiua.substring(1);
+            String rankInputVietHoaChuCaiDau = firstLetter + remain;
+
+
+            finalRankInput = rankInputVietHoaChuCaiDau;
+
+            System.out.println("finalRankInput: " + finalRankInput);
 
             for (int i = 0; i < rankList.length; i++) {
                 String rankItem = rankList[i];
 
-                if (rankInputLowerCaseWithFirstLetterCapitalize.equals(
-                        rankItem)) {
+                if (finalRankInput.equals(rankItem)) {
                     // Gold --> toLowerCase --> gold == rankItem -> gold
                     isUserInputValid = true;
                     break;
@@ -52,7 +63,7 @@ public class RankChecking {
 
             if (isUserInputValid) {
                 System.out.println(
-                        "Người dùng nhập hợp lệ: " + rankInputLowerCaseWithFirstLetterCapitalize);
+                        "Người dùng nhập hợp lệ: " + finalRankInput);
             } else {
                 System.out.print("Vui lòng nhập lại: ");
                 rankInput = scanner.nextLine();
@@ -62,18 +73,18 @@ public class RankChecking {
 
         // So sánh rank thực tế và rank được ng dùng nhập
         // bạc, Bạc, Vàng, Kim cương, Thách đấu
-        switch (rankInputLowerCaseWithFirstLetterCapitalize) {
+        switch (finalRankInput) {
             case "Bạc":
-                rankInputLowerCaseWithFirstLetterCapitalize = "Silver";
+                finalRankInput = "Silver";
                 break;
             case "Vàng":
-                rankInputLowerCaseWithFirstLetterCapitalize = "Gold";
+                finalRankInput = "Gold";
                 break;
             case "Kim cương":
-                rankInputLowerCaseWithFirstLetterCapitalize = "Diamond";
+                finalRankInput = "Diamond";
                 break;
             case "Thách đấu":
-                rankInputLowerCaseWithFirstLetterCapitalize = "Challenge";
+                finalRankInput = "Challenge";
                 break;
             default:
                 break;
@@ -81,7 +92,7 @@ public class RankChecking {
 
 
         String actualRank = "Silver";
-        if (actualRank.equals(rankInputLowerCaseWithFirstLetterCapitalize)) {
+        if (actualRank.equals(finalRankInput)) {
             System.out.println("Bạn thật trung thực, cho bạn 100G nè ^.^");
         } else {
             System.out.println("Bạn thật hư -_-");
