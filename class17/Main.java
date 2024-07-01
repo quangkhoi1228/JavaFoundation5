@@ -42,6 +42,15 @@ public class Main {
         System.out.println("yasuoDame: " + yasuoDame);
         System.out.println("rivenDame: " + rivenDame);
 
+
+        Skill baoKiem = new Skill();
+        baoKiem.name = "Bão kiếm";
+        baoKiem.AD = yasuo.attackDamage;
+        baoKiem.AP = yasuo.abilityPower;
+        baoKiem.percentAD = 1.05;
+        baoKiem.percentAP = 0;
+        baoKiem.skillDame();
+
     }
 
 
