@@ -39,5 +39,12 @@ public class Main {
 
     }
 
+    // Stack
+    // Queue
+    // Linked  list
+    // Hashmap
+    // Tree
+
+
 
 }
