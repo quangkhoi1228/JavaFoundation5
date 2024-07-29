@@ -1,21 +1,27 @@
 package class19;
 
 public class Champion {
-    private int AD;
-    private int AP;
+    // static
+    public final String publisher = "Khoa";
+
+    // public
     private String name;
+    // private
+    private int AD;
+    // protected
+    private int AP;
 
     // constructor không có parameter ==> contructor mặc định
-    Champion() {
+    public Champion() { // access modifier = default
 
     }
 
-    Champion(String championName, int championAD, int championAP) {
+    public Champion(String championName, int championAD, int championAP) {
         this.name = championName;
         this.AD = championAD;
         this.AP = championAP;
-    }
 
+    }
 
     public int getAD() {
         return this.AD;

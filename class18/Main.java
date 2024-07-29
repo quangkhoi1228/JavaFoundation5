@@ -1,5 +1,7 @@
 package class18;
 
+import class19.Champion;
+
 public class Main {
 
     /**
@@ -29,6 +31,7 @@ public class Main {
         // Bộ câu trả lời tuỳ theo mức rank hiện tại của người dùng
         JohnSmith johnSmithSilver = new JohnSmith();
 
+
 //        johnSmithSilver.setAnswerForSilver("Chào bạn");
         johnSmithSilver.setAnswerForSilver(null);
 
@@ -37,6 +40,10 @@ public class Main {
                 "Giá trị johnSmithSilver.answer Silver: "
                         + johnSmithSilver.getAnswerForSilver());
 
+        Champion yasuo = new Champion();
+//        yasuo.name = "Yasuo public";
+////        yasuo.AD  --> private
+//        yasuo.AP
     }
 
     // Stack
